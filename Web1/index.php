@@ -13,7 +13,7 @@
             Visualiza tu navegador poniendo localhost:6789 
         </pre>
 
-        <p>Esto es un parrafo</p>>
+        <p>Esto es un parrafo</p>
         <?php
             echo "Esto lo escribe <b>PHP</b>"
         ?>
