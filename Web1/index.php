@@ -4,7 +4,7 @@
         <meta></meta>
         <title>Titulo</title>
         <link rel="stylesheet" href="css/estilo.css">
-        <script src="js/prog.js"></script>
+        <!--<script src="js/prog.js"></script>-->
     </head>
     <body>
         <h1>Hola Mundo</h1>
