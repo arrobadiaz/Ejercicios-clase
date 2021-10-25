@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta></meta>
         <title>Titulo</title>
         <link rel="stylesheet" href="css/estilo.css">
         <!--<script src="js/prog.js"></script>-->
