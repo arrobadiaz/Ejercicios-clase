@@ -7,7 +7,7 @@
         <script src="js/prog.js"></script>
     </head>
     <body>
-        <h1>Esto es un encabezado</h1>
+        <h1>Hola Mundo</h1>
         <pre>
             Ejecuta php -S localhost:6789
             Visualiza tu navegador poniendo localhost:6789 
