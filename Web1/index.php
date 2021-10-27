@@ -14,7 +14,7 @@
 
         <p>Esto es un parrafo</p>
         <?php
-            echo "Esto lo escribe <b>PHP</b>"
+            echo "Esto lo escribe <b>PHP</b> Version 2";
         ?>
     </body>
 </html>
