@@ -15,6 +15,7 @@ if(isset($_POST["enviar"])){
     $boton=$_POST["edad"];
 
     if(isset($_POST["edad"])){
+        /*$variable=(true)?'valor-verdad':'valor-mentira';*/
         $edad_20_39=($_POST["edad"]=="20-39")?'checked':'';
         $edad_40_59=($_POST["edad"]=="40-59")?'checked':'';
         $edad_60_79=($_POST["edad"]=="60-79")?'checked':'';
