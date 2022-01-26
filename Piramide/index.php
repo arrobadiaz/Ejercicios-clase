@@ -1,9 +1,18 @@
 <?php
-echo "<br>POST:<br>";
-print_r($_POST);
 
-for ($i=0;$i<$_POST["numero"];$i++){
-    echo "*";
+$asterisco = "*";
+$min = 0;
+$max = 255;
+
+header("Location: http://localhost:9000",TRUE,301);
+for ($fila=1;$fila<=$_GET["numero"];$fila++){
+    for ($columna=1;$columna<$fila;$columna++){
+        $aleatorio1=rand($min,$max);
+        $aleatorio2=rand($min,$max);
+        $aleatorio3=rand($min,$max);
+        echo "<span style='color: rgb($aleatorio1,$aleatorio2,$aleatorio3)'>*</span>";
+    }
+    echo "<br>";
 }
 
 ?>
@@ -19,7 +28,7 @@ for ($i=0;$i<$_POST["numero"];$i++){
 <body>
     <div>
         <h1 aling="center">Pirámide de asteriscos</h1>
-        <form action="index.php" method="post">
+        <form action="index.php" method="get">
             <fieldset>
                 <label for="numero">Nº de asteriscos</label>
                 <input name="numero" id="numero" type="text" tabindex="1"/>
