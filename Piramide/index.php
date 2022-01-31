@@ -1,45 +1,51 @@
-<?php
+<?php 
+$enviado=false;
+$altura=0;
 
-$numero = $_POST['numero'];
-$_GET = $numero;
-$min = 0;
-$max = 255;
-$sec = 60;
-$url = "http://localhost:9000/index.php?numero=".$_GET."&generar=Generar?>";
+if(isset($_POST['altura'])){
+    $enviado=true;
+    $altura=$_POST['altura'];
+}
+
+if(isset($_GET['altura'])){
+    $enviado=true;
+    $altura=$_GET['altura'];
+}
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="<?php echo $sec?>;URL=<?php echo $url?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pirámide de asteriscos</title>
+    <?php if ($enviado==true) { ?>
+        <meta http-equiv="refresh" content="1; url=index.php?altura=<?=altura?>">
+    <?php } ?> 
+    <title>Pirámide</title>
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-    <div style="text-align: center"> 
-        <h1 aling="center">Pirámide de asteriscos</h1>
-        <form action="index.php" method="post">
-            <fieldset>
-                <label for="numero">Nº de asteriscos</label>
-                <input name="numero" id="numero" type="text" tabindex="1"/>
-                <input type="submit" name="generar" value="Generar">
-            </fieldset>
-        </form>
-        <?php
-
-            for ($fila=1;$fila<=$_POST["numero"];$fila++){
-                for ($columna=0;$columna<$fila;$columna++){
-                    $aleatorio1=rand($min,$max);
-                    $aleatorio2=rand($min,$max);
-                    $aleatorio3=rand($min,$max);
-                    echo "<span style='color: rgb($aleatorio1,$aleatorio2,$aleatorio3)'>*</span>";
+    <div id="contenido">
+        <?php if($enviado == false) { ?>
+            <h1>Introduce la altura de la pirámide</h1>
+            <form action="index.php" method="post">
+                <input type="number" name="altura" id="">
+                <input type="submit" value="Generar">
+            </form>
+        <?php } else { ?>
+            <h1>Pirámide</h1>
+            <p>
+            <?php 
+                for($a=1;$a<=$altura;$a++){
+                    for($c=1;$c<=$a;$c++){
+                        echo '<span style="color: '. sprintf("#%06X", mt_rand(0, 0xFFFFFF)) .'">*</span>';
+                    }
+                    echo "<br>";
                 }
-                echo "<br>";
-            }
-        
-        ?>
-    </div>
+            ?>
+            </p>
+        <?php } ?>
+    </div>    
 </body>
 </html>
