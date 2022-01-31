@@ -39,7 +39,7 @@ if(isset($_POST["enviar"])){
     if($edad_59_70 == ''){
         $error_edad = true;
     }
-
+    
     if(isset($_POST["edad"])){
         /*
         if($_POST["edad"]=="20-39") {
