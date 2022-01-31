@@ -25,6 +25,21 @@ if(isset($_POST["enviar"])){
         $error_apellidos = true;
     }
 
+    $edad_20_39 = (isset($_POST["edad"]))?$_POST["edad"]:'';
+    if($edad_20_39 == ''){
+        $error_edad = true;
+    }
+
+    $edad_40_59 = (isset($_POST["edad"]))?$_POST["edad"]:'';
+    if($edad_40_59 == ''){
+        $error_edad = true;
+    }
+
+    $edad_59_70 = (isset($_POST["edad"]))?$_POST["edad"]:'';
+    if($edad_59_70 == ''){
+        $error_edad = true;
+    }
+
     if(isset($_POST["edad"])){
         /*
         if($_POST["edad"]=="20-39") {
@@ -45,7 +60,7 @@ if(isset($_POST["enviar"])){
         ${"edad_".$_POST["edad"]}='checked';
     }
 
-    if($error_nombre || $error_apellidos) {
+    if($error_nombre || $error_apellidos || $error_edad) {
         $errores = true;
     }
 }
@@ -100,7 +115,7 @@ print_r($_SERVER);
                 <input <?=($error_apellidos)?'class="background-error"':'';?> name="apellidos" id="apellidos" type="text" tabindex="2" value="<?=$apellidos?>"/>
             </fieldset>
 
-            <fieldset>
+            <fieldset <?=($error_edad)?'class="background-error"':'';?>>
                 <legend>Edad</legend>
                 <label><input type="radio" tabindex="20" name="edad" value="20_39" <?=$edad_20_39?>/> 20-39</label>
                 <label><input type="radio" tabindex="21" name="edad" value="40_59" <?=$edad_40_59?>/> 40-59</label>
