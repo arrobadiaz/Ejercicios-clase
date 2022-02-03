@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primera prueba JS</title>
+    <script>
+        window.addEventListener("load", function(){
+            let pulsaBtn //declaramos una variable
+            let numClicks = 0
+            pulsaBtn = document.getElementById("pulsaBtn") //Obtenemos el elemento HTML en JS
+            pulsaBtn.addEventListener("click", function(){ //Asociamos una accion al evento click
+                numClicks = numClicks + 1
+                alert("Me has pulsado" + numClicks + "!")
+            })
+        })
+       
+        //document.writeln("Hola mundo JS!")
+        //alert('Hola mundo')
+    </script>
+</head>
+<body>
+    <h1>HOLA HTML</h1>
+    <button id="pulsaBtn">Púlsame!!</button>
+</body>
+</html>
