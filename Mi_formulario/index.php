@@ -5,17 +5,24 @@ $nombre="";
 $apellidos='';
 $correo="";
 $edad='';
+$telefono="";
 
 $errores = false;
 $error_nombre = false;
 $error_apellido = false;
 $error_edad = false;
+$error_telefono = false;
 
 if(isset($_POST["enviar"])){
     $bienvenido=false;
 
     $nombre = (isset($_POST["nombre"]))?$_POST["nombre"]:'';
     if(strlen($nombre)<3){
+        $error_nombre = true;
+    }
+
+    $nombre = (isset($_POST["nombre"]))?$_POST["nombre"]:'';
+    if(strlen($nombre)==''){
         $error_nombre = true;
     }
 
