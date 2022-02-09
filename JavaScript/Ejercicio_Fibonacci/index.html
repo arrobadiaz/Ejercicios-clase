@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primera prueba JS</title>
+    <title>Fibonacci</title>
     <script>
         window.addEventListener("load", function(){
             let pulsaBtn //declaramos una variable
-            let numClicks = 0
+            let num1 = 0
+            let num2 = 1
+            let suma = 0
             pulsaBtn = document.getElementById("pulsaBtn") //Obtenemos el elemento HTML en JS
             let salida = document.getElementById("salida") //Declaramos la variable y obtenemos el elemento HTML en JS
             pulsaBtn.addEventListener("click", function(){ //Asociamos una accion al evento click
-                if (numClicks == 0){
-                    salida.innerHTML = "Bienvenido!!!"
-                    numClicks = numClicks + 1
-                }else{
-                    numClicks = numClicks + 1
-                    salida.innerHTML = "Me has pulsado " + numClicks + "!"
-                }
-            })
+                    //0 1 1 2 3 5 8 13
+                    suma = num1 + num2
+                    num1 = num2
+                    num2 = suma
+                    salida.innerHTML = suma
+                })
         })
        
         //document.writeln("Hola mundo JS!")
@@ -27,9 +27,9 @@
     </script>
 </head>
 <body>
-    <h1>HOLA HTML</h1>
+    <h1>Generador de Fibonacci</h1>
     <button id="pulsaBtn">Púlsame!!</button>
     <br>
-    <div id="salida">Salida</div>
+    <div id="salida"><h2>Salida</h2></div>
 </body>
 </html>
