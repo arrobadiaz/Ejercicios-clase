@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Elements</title>
+    <script>
+        window.addEventListener('load', function(){
+            let lista = document.getElementById('lista')
+            let addBtn = document.getElementById('addBtn')
+            let producto = document.getElementById('producto')
+            let cantidad = document.getElementById('cantidad')
+            addBtn.addEventListener('click', function(){
+                let li = document.createElement('li')
+                li.innerHTML = producto.value +" --> "+ cantidad.value
+                lista.appendChild(li)
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Lista de la compra</h1>
+    <input type="text" name="" id="producto">
+    <input type="number" name="" id="cantidad">
+    <button id="addBtn">Añadir Producto</button>
+    <div>
+        <ul id="lista">
+            <h2>Tus productos</h2>
+        </ul>
+    </div>
+</body>
+</html>
