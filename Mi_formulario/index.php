@@ -42,7 +42,7 @@ if(isset($_POST["enviar"])){
     }
 
     $correo = (isset($_POST["correo"]))?$_POST["correo"]:'';
-    if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)==false) {
         $error_correo = true;
     }
 

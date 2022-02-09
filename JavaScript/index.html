@@ -11,8 +11,13 @@
             let numClicks = 0
             pulsaBtn = document.getElementById("pulsaBtn") //Obtenemos el elemento HTML en JS
             pulsaBtn.addEventListener("click", function(){ //Asociamos una accion al evento click
-                numClicks = numClicks + 1
-                alert("Me has pulsado" + numClicks + "!")
+                if (numClicks == 0){
+                    alert("Bienvenido!!!")
+                    numClicks = numClicks + 1
+                }else{
+                    numClicks = numClicks + 1
+                    alert("Me has pulsado" + numClicks + "!")
+                }
             })
         })
        
