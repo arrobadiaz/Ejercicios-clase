@@ -14,22 +14,27 @@
             let div = document.getElementById('div')
             let num1 = document.getElementById('num1')
             let num2 = document.getElementById('num2')
+            let h1 = document.createElement('h1')
             let resultado = 0
             suma.addEventListener('click', function(){
                 resultado = parseInt(num1.value) + parseInt(num2.value)
-                salida.innerHTML = resultado
+                h1.innerHTML = resultado
+                salida.appendChild(h1)
             })
             resta.addEventListener('click', function(){
                 resultado = parseInt(num1.value) - parseInt(num2.value)
-                salida.innerHTML = resultado
+                h1.innerHTML = resultado
+                salida.appendChild(h1)
             })
             multi.addEventListener('click', function(){
                 resultado = parseInt(num1.value) * parseInt(num2.value)
-                salida.innerHTML = resultado
+                h1.innerHTML = resultado
+                salida.appendChild(h1)
             })
             div.addEventListener('click', function(){
                 resultado = parseInt(num1.value) / parseInt(num2.value)
-                salida.innerHTML = resultado
+                h1.innerHTML = resultado
+                salida.appendChild(h1)
             })
         })
     </script>
