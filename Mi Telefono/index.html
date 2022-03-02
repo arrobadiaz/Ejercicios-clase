@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefono</title>
+    <script>
+        window.addEventListener('load', function(){
+            let salida = document.getElementById('salida')
+            let uno = document.getElementById('uno')
+            let dos = document.getElementById('dos')
+            let tres = document.getElementById('tres')
+            let cuatro = document.getElementById('cuatro')
+            let cinco = document.getElementById('cinco')
+            let seis = document.getElementById('seis')
+            let siete = document.getElementById('siete')
+            let ocho = document.getElementById('ocho')
+            let nueve = document.getElementById('nueve')
+            let cero = document.getElementById('cero')
+            let h1 = document.createElement('h1')
+            let numeros = ''
+            uno.addEventListener('click', function(){
+                numeros = numeros + uno.value
+                h1.innerHTML = numeros
+                salida.appendChild(h1)
+            })
+            dos.addEventListener('click', function(){
+                numeros = numeros + dos.value
+                h1.innerHTML = numeros
+                salida.appendChild(h1) 
+            })
+            tres.addEventListener('click', function(){
+                numeros = numeros + tres.value
+                h1.innerHTML = numeros
+                salida.appendChild(h1) 
+            })
+            cuatro.addEventListener('click', function(){
+                numeros = numeros + cuatro.value
+                h1.innerHTML = numeros
+                salida.appendChild(h1)
+            })
+            cinco.addEventListener('click', function(){
+                numeros = numeros + cinco.value
+                h1.innerHTML = numeros
+                salida.appendChild(h1) 
+            })
+            seis.addEventListener('click', function(){
+                numeros = numeros + seis.value
+                h1.innerHTML = numeros
+                salida.appendChild(h1) 
+            })
+            siete.addEventListener('click', function(){
+                numeros = numeros + siete.value
+                h1.innerHTML = numeros
+                salida.appendChild(h1)
+            })
+            ocho.addEventListener('click', function(){
+                numeros = numeros + ocho.value
+                h1.innerHTML = numeros
+                salida.appendChild(h1) 
+            })
+            nueve.addEventListener('click', function(){
+                numeros = numeros + nueve.value
+                h1.innerHTML = numeros
+                salida.appendChild(h1) 
+            })
+            cero.addEventListener('click', function(){
+                numeros = numeros + cero.value
+                h1.innerHTML = numeros
+                salida.appendChild(h1) 
+            })
+            reset.addEventListener('click', function(){
+                numeros = ''
+                salida.innerHTML = '' 
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center">Teléfono</h1>
+    <h2 style="text-align: center;">Añade el número que quieras</h2>
+    <div style="text-align: center;">
+        <button id="uno" value="1">1</button>
+        <button id="dos" value="2">2</button>
+        <button id="tres" value="3">3</button>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <button id="cuatro" value="4">4</button>
+        <button id="cinco" value="5">5</button>
+        <button id="seis" value="6">6</button>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <button id="siete" value="7">7</button>
+        <button id="ocho" value="8">8</button>
+        <button id="nueve" value="9">9</button>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <button id="cero" value="0">0</button>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <button id="reset">Reset</button>
+    </div>
+    <br>
+    <div style="text-align: center;" id="salida">
+        <h1></h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcador telefónico</title>
+    <link rel="stylesheet" href="estilo.css">
+    <!--Crea un marcador de teléfono
+        1 2 3 4 5 6 7 8 9 0
+        Con botones
+        En un h1 se irá concatenando cada tecla
+        Crea un botón para limpiar el contenido del h1
+    
+        Origen de imagen: 'Those Icons' en Flaticon. 
+    -->
+    <script>
+        window.addEventListener("load",function(){
+            let botones = this.document.getElementsByClassName("botoncito")
+            //onsole.log(botones)
+            let valor = ''
+            let cuenta = 0
+            let n_telefono = this.document.getElementById("n_telefono")
+            for(var i=0;i<botones.length;i++){
+                botones[i].addEventListener("click", function(){
+                    if (this.value == 'R') {
+                        valor = ''
+                        n_telefono.innerHTML =  valor
+                    } else {
+                        if (cuenta == 3) {
+                            valor = valor + '  ' + this.value 
+                            n_telefono.innerHTML =  valor
+                            cuenta = 1
+                        } else {
+                            valor = valor + this.value 
+                            n_telefono.innerHTML =  valor
+                            cuenta++
+                        }
+                    }
+                });
+            }
+    
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <h1 id="title">Marcador telefónico</h1>
+    </div>
+    <div id="marcador">
+        <button id="Btn1" value="1" class="botoncito">1</button>
+        <button id="Btn2" value="2" class="botoncito">2</button>
+        <button id="Btn3" value="3" class="botoncito">3</button><br/>
+        <button id="Btn4" value="4" class="botoncito">4</button>
+        <button id="Btn5" value="5" class="botoncito">5</button>
+        <button id="Btn6" value="6" class="botoncito">6</button><br/>
+        <button id="Btn7" value="7" class="botoncito">7</button>
+        <button id="Btn8" value="8" class="botoncito">8</button>
+        <button id="Btn9" value="9" class="botoncito">9</button><br/>
+        <button id="Btn0" value="0" class="botoncito">0</button>
+        <button id="BtnR" value="R" class="botoncito">Resetear</button>
+
+    </div>
+    <div id="resultado">
+        <img src="call.png" alt="Imagen de marcador de llamada">
+        <h1 id="n_telefono">¡Marca un teléfono!</h1>
+    </div>
+</body>
+</html>
