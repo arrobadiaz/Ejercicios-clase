@@ -5,22 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Binarios</title>
+    <script>
+        window.addEventListener('load', function(){
+            let salida_bin = document.getElementById('salida_bin')
+            let salida_num = document.getElementById('salida_num')
+            let cero = document.getElementById('cero')
+            let uno = document.getElementById('uno')
+            let binarios = ''
+            let numeros = ''
+
+            cero.addEventListener('click', function(){
+                binarios = binarios + cero.value
+                salida_bin.innerHTML = binarios
+            })
+            
+            uno.addEventListener('click', function(){
+                binarios = binarios + uno.value
+                salida_bin.innerHTML = binarios
+                
+            })
+
+            reset.addEventListener('click', function(){
+                binarios = ''
+                salida_bin.innerHTML = ''
+                salida_num.innerHTML = '' 
+            })
+        })
+    </script>
 </head>
-<body>
-    <h1>Calculadora de binarios</h1>
-    <h4>Pulsa en los botoncitos y calcularemos el binario por ti :)</h4>
+<body style="background-color: gray;">
+    <h1 style="text-align: center;">Calculadora de binarios</h1>
+    <h4 style="text-align: center;">Pulsa en los botoncitos y calcularemos el binario por ti :)</h4>
     <br>
     <hr>
     <br>
-    <div>
-        <button id="cero">0</button>
-        <button id="uno">1</button>
+    <div style="text-align: center;">
+        <button id="cero" value="0">0</button>
+        <button id="uno" value="1">1</button>
     </div>
-    <div>
+    <div style="text-align: center;">
         <button id="reset">Reset</button>
+        <hr>
+        <h1 id="salida_bin"></h1>
     </div>
-    <div>
+    <div style="text-align: center;">
         <button id="calcular">Calcular</button>
+        <h1 id="salida_num"></h1>
     </div>
+
 </body>
 </html>

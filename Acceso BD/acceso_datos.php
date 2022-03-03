@@ -5,13 +5,7 @@ try {
                     'sergio',
                     '1234'
                 );
-    
-    $datos = $conexion_bd->query('SELECT * from Ciclistas');
-
-    foreach($datos as $fila) {
-        print_r($fila);
-    }
-    $conexion_bd = null;
+    $conexion_bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //https://www.php.net/manual/en/pdo.setattribute.php
 
 } catch (PDOException $e) {
     print "¡Error!: " . $e->getMessage() . "<br/>";
